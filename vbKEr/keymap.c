@@ -11,27 +11,27 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(1, KC_E)
-#define DUAL_FUNC_1 LT(12, KC_F14)
-#define DUAL_FUNC_2 LT(5, KC_F10)
-#define DUAL_FUNC_3 LT(1, KC_U)
-#define DUAL_FUNC_4 LT(8, KC_F5)
-#define DUAL_FUNC_5 LT(6, KC_L)
-#define DUAL_FUNC_6 LT(4, KC_F18)
-#define DUAL_FUNC_7 LT(3, KC_F9)
-#define DUAL_FUNC_8 LT(9, KC_V)
-#define DUAL_FUNC_9 LT(8, KC_F16)
-#define DUAL_FUNC_10 LT(3, KC_F14)
-#define DUAL_FUNC_11 LT(6, KC_T)
-#define DUAL_FUNC_12 LT(10, KC_Q)
-#define DUAL_FUNC_13 LT(3, KC_K)
-#define DUAL_FUNC_14 LT(9, KC_F3)
-#define DUAL_FUNC_15 LT(10, KC_P)
-#define DUAL_FUNC_16 LT(7, KC_W)
-#define DUAL_FUNC_17 LT(14, KC_Q)
-#define DUAL_FUNC_18 LT(12, KC_V)
-#define DUAL_FUNC_19 LT(15, KC_E)
-#define DUAL_FUNC_20 LT(10, KC_2)
+#define DUAL_FUNC_0 LT(2, KC_F5)
+#define DUAL_FUNC_1 LT(4, KC_W)
+#define DUAL_FUNC_2 LT(10, KC_4)
+#define DUAL_FUNC_3 LT(15, KC_E)
+#define DUAL_FUNC_4 LT(7, KC_F23)
+#define DUAL_FUNC_5 LT(9, KC_Y)
+#define DUAL_FUNC_6 LT(13, KC_6)
+#define DUAL_FUNC_7 LT(12, KC_F13)
+#define DUAL_FUNC_8 LT(13, KC_K)
+#define DUAL_FUNC_9 LT(11, KC_F6)
+#define DUAL_FUNC_10 LT(10, KC_L)
+#define DUAL_FUNC_11 LT(15, KC_X)
+#define DUAL_FUNC_12 LT(3, KC_E)
+#define DUAL_FUNC_13 LT(12, KC_O)
+#define DUAL_FUNC_14 LT(12, KC_F21)
+#define DUAL_FUNC_15 LT(8, KC_X)
+#define DUAL_FUNC_16 LT(14, KC_D)
+#define DUAL_FUNC_17 LT(4, KC_F3)
+#define DUAL_FUNC_18 LT(5, KC_F6)
+#define DUAL_FUNC_19 LT(10, KC_N)
+#define DUAL_FUNC_20 LT(4, KC_F14)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,      KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_QUOTE,       KC_CAPS,        
     KC_BSPC,        MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_R),MT(MOD_LGUI, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RGUI, KC_E),MT(MOD_RALT, KC_I),MT(MOD_RCTL, KC_O),KC_BSPC,        
     KC_ENTER,       KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_ENTER,       
-                                                    LT(1, KC_SPACE),MO(3),                                          MO(4),          LT(2, KC_SPACE)
+                                                    LT(1, KC_SPACE),KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -94,13 +94,11 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM combo0[] = { LT(2, KC_SPACE), LT(1, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo1[] = { MO(3), MO(4), COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_MS_BTN2, RGUI(KC_MINUS), COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_MS_BTN2, RGUI(KC_MINUS), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, LGUI(KC_ESCAPE)),
-    COMBO(combo1, TT(5)),
-    COMBO(combo2, TO(0)),
+    COMBO(combo1, TO(0)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
